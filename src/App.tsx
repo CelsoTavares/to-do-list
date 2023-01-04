@@ -11,6 +11,9 @@ const App = () => {
   ]);
 
   const handleAddTest = (taskName: string) => {
+    const check = list.find((e) => e.name === taskName);
+    if (check) return alert("Título já existe!");
+    
     let newList = [...list];
     newList.push({
       id: list.length,
@@ -20,9 +23,8 @@ const App = () => {
     setList(newList);
   };
 
-  const del = (id: number) => {
-    const filter = list.filter((item) => item.id !== id);
-    console.log(id);
+  const del = (name: string) => {
+    const filter = list.filter((item) => item.name !== name);
     setList(filter);
   };
   return (
@@ -36,7 +38,7 @@ const App = () => {
           <div key={index} className="divList">
             <ListItem item={item} />
             <div>
-              <span onClick={() => del(item.id)}>
+              <span onClick={() => del(item.name)}>
                 <RiDeleteBin2Fill size={25} />
               </span>
             </div>
