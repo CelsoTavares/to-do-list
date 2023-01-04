@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 20px 0;
   display: flex;
   align-items: center;
-  background: #17181f;
+  background: #15161e;
 
   svg {
     cursor: pointer;
