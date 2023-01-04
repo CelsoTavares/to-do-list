@@ -14,6 +14,7 @@ export const Container = styled.div`
   }
   input {
     border: 0;
+    width: 100%;
     background: transparent;
     outline: 0;
     color: #fff;
